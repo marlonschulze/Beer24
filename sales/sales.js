@@ -11,6 +11,20 @@ const dataInput = document.getElementById('data');
 const btnCalcular = document.getElementById('btn-calcular');
 const displayValor = document.getElementById('display-valorTotal');
 
+
+//Atalhos do teclado
+document.addEventListener('keydown', (e) => {
+  if(e.key === 'Enter'){
+    e.preventDefault();
+    btnCalcular.click();
+  }
+
+  if(e.key === 'Escape'){
+    form.reset();
+    displayValor.innerHTML = '';
+  }
+})
+
 // Mostrar os produtos cadastrados
 function renderizarProdutosVenda(produtosParaRenderizar = produtos) {
   listaProdutos.innerHTML = '';

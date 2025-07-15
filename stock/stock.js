@@ -12,6 +12,22 @@ const btnAlertEstoque = document.getElementById('btn-alertaEstoque');
 const painelAlertaEstoque = document.querySelector('.painel-alertaEstoque');
 const listaEstoqueBaixo = document.getElementById('lista-estoqueBaixo');
 
+
+//Atalho do teclado
+document.addEventListener('keydown', (e) => {
+  if(e.key === 'Enter'){
+    e.preventDefault();
+    cadastrarProduto();
+  };
+
+  if(e.key === 'Escape'){
+    form.reset();
+  };
+});
+
+
+
+
 let produtos = JSON.parse(localStorage.getItem("produtos")) || [];
 renderizarProdutos();
 
@@ -158,7 +174,7 @@ function gerarAlertaEstoque(){
   if(produtoBaixo.length === 0){
     listaEstoqueBaixo.innerHTML = "<li>Tudo em ordem! Nenhum produto em número baixo!</li>";
     return;
-  }
+  } 
 
   produtoBaixo.forEach(produto => {
     const li = document.createElement('li');
