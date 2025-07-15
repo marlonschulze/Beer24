@@ -1,0 +1,251 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #f9f9f9;
+  color: #222;
+  overflow-y: hiden;
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+header {
+  background-color: #222;
+  border-bottom: 1px solid white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 0.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  height: 70px;
+}
+
+.logo{
+  margin-left: 20px;
+}
+
+.logo img{
+  width: 70px;
+  height: 0 auto;
+}
+
+nav{
+  margin-right: 20px;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: lighter;
+  font-size: 1.2rem;
+}
+
+nav a:hover{
+  color: #e48e00;
+}
+
+.container{
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  height: calc(100vh - 70px);
+}
+
+/*cadastro*/
+.cadastro{
+  width: 40%;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.cadastro h2{
+  margin-bottom: 1rem;
+  color: #e48e00;
+}
+
+.cadastro label{
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.cadastro input,
+.cadastro select{
+  width: 100%;
+  padding: 0.4rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.cadastro input:focus,
+.cadastro select:focus{
+  border: 2px solid #e48e00;
+  box-shadow: 2px 2px 10px #e48e00;
+}
+
+.cadastro button{
+  margin-top: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+  background-color: #e48e00;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cadastro button:hover {
+  background-color: #cc7d00;
+}
+
+/*lista de produtos*/
+.lista{
+  width: 60%;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.lista h2{
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.lista input#busca{
+  padding: 0.5rem;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  outline: none;
+}
+
+#lista-produtos{
+  flex: 1;
+  overflow-y: auto;
+  border-top: 1px solid #eee;
+  padding-top: 1rem;
+}
+
+.produto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-left: 5px solid #ccc;
+  border-radius: 4px;
+  background-color: #fafafa;
+}
+
+.produto-info{
+  max-width: 90%;
+}
+
+.btn-remover{
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.alertAdd-produto{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  top: 50px;
+  left: 35%;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  border: 5px solid rgb(4, 255, 4);
+  display: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from{
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.alertAdd-produto h2{
+  color: rgb(4, 255, 4);
+  font-size: 1rem;
+}
+
+.alertAdd-produto p{
+  margin-bottom: 1rem;
+}
+
+/*alerta de baixo estoque*/
+#btn-alertaEstoque {
+  padding: 0.5rem 1rem;
+  background-color: #cc0000;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  margin: 1rem;
+}
+
+#btn-alertaEstoque:hover{
+  background-color: #aa0303;
+}
+
+.painel-alertaEstoque {
+  background-color: #fff3f3;
+  border: 2px solid #cc0000;
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 2rem;
+  margin-bottom: 1rem;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.painel-alertaEstoque h3 {
+  color: #cc0000;
+  margin-bottom: 0.5rem;
+}
+
+.painel-alertaEstoque ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.painel-alertaEstoque li {
+  margin-bottom: 0.5rem;
+}

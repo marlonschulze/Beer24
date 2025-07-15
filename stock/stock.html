@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stock.css">
+  <link rel="shortcut icon" href="/assets/img/beer24 - logo.png" type="image/x-icon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap" rel="stylesheet">
+
+  <title>Beer24 - Produtos</title>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="/assets/img/beer24 - logo.png" alt="Beer24">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../home/home.html">Início</a></li>
+        <li><a href="../sales/sales.html">Vendas</a></li>
+        <li><a href="../stock/stock.html">Estoque</a></li>
+        <li><a href="../report/report.html">Relatório</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!--Cadastro de Bebidas-->
+    <section class="cadastro">
+      <h2>Adicionar Produto</h2>
+      <form id="form-produtos">
+        <label for="nome">Nome: </label>
+        <input type="text" id="name" name="nome" required>
+
+        <label for="tipo">Tipo: </label>
+        <select name="tipo" id="tipo" required>
+          <option value="">Selecione...</option>
+          <option value="Refrigerante">Refrigerante</option>
+          <option value="Cerveja">Cerveja</option>
+          <option value="Energético">Energético</option>
+          <option value="Vodka">Vodka</option>
+          <option value="Whisky">Whisky</option>
+          <option value="Outros">Outros</option>
+        </select>
+
+        <label for="embalagem">Embalagem: </label>
+        <select name="embalagem" id="embalagem" required>
+          <option value="">Selecione...</option>
+          <option value="Lata">Lata</option>
+          <option value="Latão">Latão</option>
+          <option value="Garrafa PET 600ml">Garrafa PET 600ml</option>
+          <option value="Garrafa PET 2L">Garrafa PET 2L</option>
+          <option value="Garrafa">Garrafa</option>
+          <option value="Long Neck">Long Neck</option>
+          <option value="Pack">Pack</option>
+          <option value="Fardo">Fardo</option>
+          <option value="Engradado">Engradado</option>
+        </select>
+
+        <label for="preco">Preço (R$): </label>
+        <input type="number" id="preco" name="preco" step="0.01" required>
+
+        <label for="quantidade">Quantidade: </label>
+        <input type="number" id="quantidade" name="quantidade" required> 
+
+        <button type="submit">Adicionar Produto</button>
+      </form>
+    </section>
+
+    <!--Lista de Produtos-->
+    <section class="lista">
+      <h2>Lista de Produtos</h2>
+      <input type="text" id="busca" placeholder="🔍 Buscar por nome ou tipo...">
+
+      <div id="lista-produtos">
+        <!--Aqui dentro estará a lista de produtos-->
+      </div>
+    </section>
+
+
+  </main>
+
+  <div class="alertAdd-produto">
+    <h2>Produto Adicionado com Sucesso</h2>
+    <p id="desc-produtoAdd"></p>
+  </div>
+
+  <button id="btn-alertaEstoque">⚠️ Ver Baixo Estoque</button>
+  <div class="painel-alertaEstoque" style="display: none;">
+    <h3>Produtos com Estoque Baixo</h3>
+    <ul id="lista-estoqueBaixo"></ul>
+  </div>
+
+
+  <script src="stock.js"></script>
+</body>
+</html>

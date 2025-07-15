@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="sales.css">
+  <link rel="shortcut icon" href="/assets/img/beer24 - logo.png" type="image/x-icon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap" rel="stylesheet">
+
+  <title>Beer24 - Produtos</title>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="/assets/img/beer24 - logo.png" alt="Beer24">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../home/home.html">Início</a></li>
+        <li><a href="sales.html">Vendas</a></li>
+        <li><a href="../stock/stock.html">Estoque</a></li>
+        <li><a href="../report/report.html">Relatório</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="container">
+    <!--Lista de produtos disponíveis a venda-->
+    <section class="produtos-disp">
+      <h2>Produtos Disponíveis</h2>
+      <input type="text" id="busca-venda" placeholder="🔍 Buscar produto...">
+      <div id="lista-produtos-disp"></div>
+      <div id="msg-sem-produto">
+        Nenhum produto encontrado
+      </div>
+    </section>
+
+    <!--Formulário de Venda-->
+    <section class="container-form-venda">
+      <h2>Registrar Venda</h2>
+      <form id="form-venda">
+        <label for="produto">Produto: </label>
+        <input type="text" id="produto" name="produto" readonly required>  
+
+        <label for="embalagem">Embalagem: </label>
+        <input type="text" id="embalagem" name="embalagem" readonly required>
+
+        <label for="quantidade">Quantidade: </label>
+        <input type="number" id="quantidade" name="quantidade" min="1" required>
+
+        <label for="preco">Preço Unitário: </label>
+        <input type="number" id="preco" name="preco" readonly required> 
+
+        <label for="data">Data: </label>
+        <input type="date" id="data" name="data" required> 
+
+        <button type="button" id="btn-calcular">Calcular Total</button>
+        <div id="display-valorTotal" class="display-valorTotal"></div>
+      </form>
+    </section>
+  </main>
+
+  <script src="sales.js"></script>
+</body>
+</html>

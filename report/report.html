@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="report.css">
+  <link rel="shortcut icon" href="../assets/img/beer24 - logo.png" type="image/x-icon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap" rel="stylesheet">
+
+<!--link PDF-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<!--autoTable-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+
+  <title>Beer24 - Relatório</title>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="../assets/img/beer24 - logo.png" alt="Beer24">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../home/home.html">Início</a></li>
+        <li><a href="../sales/sales.html">Vendas</a></li>
+        <li><a href="../stock/stock.html">Estoque</a></li>
+        <li><a href="report.html">Relatório</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="container">
+    <!--Relatório-->
+    <section class="relatorio">
+      <h2>Relatório de Vendas</h2>
+
+      <!--Filtro de Busca-->
+      <div class="filtros">
+        <label for="data-inicio">De: </label>
+        <input type="date" id="data-inicio">
+        <label for="data-final">Até: </label>
+        <input type="date" id="data-final">
+        <button id="btn-filtro">Filtrar</button>
+      </div>
+
+      <!--Tabela-->
+      <div class="tabela-container">
+        <table id="tabela-relatorio">
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Produto</th>
+              <th>Quantidade</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!--Dados aparecerão aqui...-->
+          </tbody>
+        </table>
+      </div>
+      <div class="resumo-relatorio">
+        <p>Total de Vendas: <span id="total-vendas">0</span></p>
+        <p>Faturamento: R$ <span id="faturamento-vendas">0</span></p>
+        <button id="exportar-PDF">Exportar em PDF</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="report.js"></script>
+</body>
+</html>

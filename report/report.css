@@ -1,0 +1,114 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #f9f9f9;
+  color: #222;
+  overflow-y: hiden;
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+header {
+  background-color: #222;
+  border-bottom: 1px solid white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 0.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  height: 70px;
+}
+
+.logo{
+  margin-left: 20px;
+}
+
+.logo img{
+  width: 70px;
+  height: 0 auto;
+}
+
+nav{
+  margin-right: 20px;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: lighter;
+  font-size: 1.2rem;
+}
+
+nav a:hover{
+  color: #e48e00;
+}
+
+.container{
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  height: calc(100vh - 70px);
+}
+
+.relatorio{
+  padding: 20px;
+
+}
+
+.filtros{
+  margin-bottom: 20px;
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td{
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+th{
+  background-color: #f4f4f4;
+}
+
+.tabela-container{
+  height: 400px;
+  overflow-y: auto;
+  padding-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.resumo-relatorio{
+  margin-top: 20px;
+}
+
+button{
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: #45a049;
+}
