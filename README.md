@@ -23,6 +23,7 @@ Este é um sistema de testes desenvolvido com HTML, CSS e JavaScript, voltado pa
 - JavaScript (puro)
 - [jsPDF](https://github.com/parallax/jsPDF) para exportação de PDF
 - [jsPDF-AutoTable](https://github.com/simonbengtsson/jsPDF-AutoTable) para gerar tabelas no PDF
+- ChartJS para criação de gráficos de vendas por produto
 
 ## 🚀 Como usar
 
