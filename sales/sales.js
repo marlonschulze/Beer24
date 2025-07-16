@@ -98,8 +98,8 @@ btnCalcular.addEventListener('click', () => {
   displayValor.style.color = "#222";
   displayValor.innerHTML = `🧮 Venda Confirmada!<br>
   <strong>Produto:</strong> ${nome} ${embalagem}<br>
-  <strong>Unidade(s):</strong> ${quantidade}<br>
-  <strong>Valor Total:</strong> R$${total.toFixed(2)}<br>
+  <strong>Unidade:</strong> ${quantidade}<br>
+  <strong>Valor Total:</strong> R$ ${total.toFixed(2).replace('.', ',')}<br>
   `
 
   const indexProduto = produtos.findIndex(p =>

@@ -14,6 +14,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <!--autoTable-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+<!--ChartJS-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <title>Beer24 - Relatório</title>
 </head>
@@ -66,6 +68,10 @@
         <p>Faturamento: R$ <span id="faturamento-vendas">0</span></p>
         <button id="exportar-PDF">Exportar em PDF</button>
       </div>
+    </section>
+    <section class="graficos" id="graficos">
+      <h3>Gráfico de Vendas por Produto</h3>
+      <canvas id="grafico-vendas" width="400" height="200"></canvas>
     </section>
   </main>
 

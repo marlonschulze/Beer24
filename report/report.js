@@ -4,6 +4,8 @@ const tabelaRelatorio = document.getElementById('tabela-relatorio').getElementsB
 const totalVendas = document.getElementById('total-vendas');
 const faturamentoVendas = document.getElementById('faturamento-vendas');
 
+let graficoVenda = null;
+
 
 function formatarDataBR(iso){
     const [ano, mes, dia] = iso.split('-');
@@ -50,7 +52,7 @@ function renderizarRelatorio(vendaFiltrada){
       <td>${formatarDataBR(venda.data)}</td>
       <td>${venda.nome}</td>
       <td>${venda.quantidade}</td>
-      <td>R$ ${venda.total}</td>`;
+      <td>R$ ${venda.total.replace('.', ',')}</td>`;
 
       tabelaRelatorio.appendChild(tr);
 
@@ -60,6 +62,55 @@ function renderizarRelatorio(vendaFiltrada){
 
   totalVendas.textContent = total;
   faturamentoVendas.textContent = faturamento.toFixed(2);
+
+  const agrupados = {};
+
+  vendaFiltrada.forEach(venda => {
+    if(!agrupados[venda.nome]){
+      agrupados[venda.nome] = 0;
+    }
+    agrupados[venda.nome] += venda.quantidade;
+  });
+
+  const labels = Object.keys(agrupados);
+  const dados = Object.values(agrupados);
+
+  //se existir um gráfico, destrói antes de criar outro
+  if(graficoVenda){
+    graficoVenda.destroy();
+  }
+
+  const ctx = document.getElementById('grafico-vendas').getContext('2d');
+  graficoVenda = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Unidades Vendidas',
+        data: dados,
+        backgroundColor: 'rgba(54, 162, 235, 0.7)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
+      }]
+    },
+
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {display: false},
+        title: {
+          display: true,
+          text: 'Unidades vendidas por produto',
+        }
+      },
+
+      scales: {
+        y: {
+          beginAtZero: true,
+        }
+      }
+    }
+  });
 }
 
 //Exportar o relatório para CSV
@@ -84,7 +135,7 @@ document.getElementById('exportar-PDF').addEventListener('click', () => {
     formatarDataBR(venda.data),
     venda.nome,
     `${venda.quantidade} unidade(s)`,
-    `R$ ${Number(venda.total).toFixed(2)}`
+    `R$ ${Number(venda.total).toFixed(2).replace('.', ',')}`
   ]);
 
   // Gera a tabela
